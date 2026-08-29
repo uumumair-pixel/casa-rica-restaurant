@@ -1,0 +1,8 @@
+{
+  "name": "Casa Rica Restaurant",
+  "description": "Premium fine dining and continental restaurant located at Central park, DHA Roundabout, Sector G DHA Phase II, Islamabad with immersive digital menu, online ordering with Cash on Delivery, WhatsApp ordering, table reservations, and admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

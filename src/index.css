@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cinzel', serif;
+    --font-cormorant: 'Cormorant Garamond', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0F0F0F;
+    color: #F9F9F7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: var(--font-serif);
+    letter-spacing: 0.04em;
+  }
+
+  .font-cormorant {
+    font-family: var(--font-cormorant);
+  }
+}
+
+/* Hide default system cursor on desktop (mouse/trackpad) so hanging burger is the sole cursor */
+@media (pointer: fine) and (min-width: 768px) {
+  *,
+  *::before,
+  *::after,
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  [role="button"],
+  .cursor-pointer {
+    cursor: none !important;
+  }
+
+  /* Clear interactive hover feedback across all clickable elements */
+  button:not(:disabled),
+  a,
+  [role="button"]:not([aria-disabled="true"]),
+  .cursor-pointer {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease, filter 0.2s ease;
+  }
+
+  button:not(:disabled):hover,
+  a:hover,
+  [role="button"]:not([aria-disabled="true"]):hover,
+  .cursor-pointer:hover {
+    filter: brightness(1.06);
+  }
+}
+
+/* Custom Editorial Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0F0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Gold glow and Editorial Aesthetic typography styling */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #F3E5C8 0%, #C5A059 50%, #9E7D38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(135deg, rgba(197, 160, 89, 0.4), rgba(197, 160, 89, 0.05)) 1;
+}
+
+.editorial-glass {
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.luxury-card {
+  background: #141414;
+  border: 1px solid rgba(197, 160, 89, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
+}
+
+.luxury-card:hover {
+  border-color: rgba(197, 160, 89, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(197, 160, 89, 0.08), 0 10px 30px -10px rgba(0, 0, 0, 0.9);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Kotal-Style Gourmet Food Hover Spin Animation */
+@keyframes kotalFoodContinuousSpin {
+  0% {
+    transform: rotate(0deg) scale(1.04);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.04);
+  }
+}
+
+.food-hover-spin-active,
+.group:hover .food-hover-spin-rest,
+.group:hover .food-hover-spin-active {
+  animation: kotalFoodContinuousSpin 5s linear infinite !important;
+  will-change: transform;
+}
+
+.food-hover-spin-rest {
+  transform: rotate(0deg) scale(1);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-hover-spin-active,
+  .group:hover .food-hover-spin-rest,
+  .group:hover .food-hover-spin-active {
+    animation: none !important;
+  }
+}
+
+
